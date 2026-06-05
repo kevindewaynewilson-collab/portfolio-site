@@ -1,16 +1,43 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Developer Portfolio Website
 
-Currently, two official plugins are available:
+## Overview
+This is my personal developer portfolio website. It showcases my IT background, web development projects, automation-focused tools, and business technology services.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Purpose
+The purpose of this portfolio is to present my transition from IT support into web development, full-stack development, and business automation solutions.
 
-## React Compiler
+## Features
+- Professional homepage
+- About section
+- Services section
+- Project showcase
+- Contact section
+- Responsive layout
+- Clean modern design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
 
-## Expanding the ESLint configuration
+## Projects Featured
+- Business Landing Page
+- IT Support Ticket Dashboard
+- Business Automation Dashboard
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What I Learned
+- Building a portfolio with React components
+- Structuring a professional developer website
+- Using Tailwind CSS for responsive design
+- Presenting technical projects clearly
+- Creating a personal brand around IT, development, and automation
+
+## Future Improvements
+- Add live project links
+- Add GitHub repository links
+- Add downloadable resume
+- Add contact form functionality
+- Add project screenshots
+- Add testimonials or client work in the future
