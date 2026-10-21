@@ -1,5 +1,5 @@
 
-
+import { useState } from "react";
 const projects = [
   {
     number: "01",
@@ -41,6 +41,53 @@ const projects = [
 
 
 function App() {
+  
+  const [formStatus, setFormStatus] = useState("idle");
+  const [formMessage, setFormMessage] = useState("");
+
+  const FORMSPREE_URL = "https://formspree.io/f/meaeblvn";
+
+  async function handleContactSubmit(event) {
+    event.preventDefault();
+
+    if (FORMSPREE_URL.includes("YOUR_FORM_ID")) {
+      setFormStatus("error");
+      setFormMessage("The contact form has not been configured yet.");
+      return;
+    }
+
+    setFormStatus("sending");
+    setFormMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Message could not be sent");
+      }
+
+      form.reset();
+      setFormStatus("success");
+      setFormMessage(
+        "Your message has been sent successfully. Thank you for reaching out!"
+      );
+    } catch {
+      setFormStatus("error");
+      setFormMessage(
+        "Something went wrong. Please try again in a moment."
+      );
+    }
+  }
+
   return (
     <div className="site">
       <header className="navbar">
@@ -303,15 +350,143 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="contact-section">
-          <div className="container contact-inner">
-            <span className="section-kicker">05 / LET'S CONNECT</span>
-            <h2>Have an idea?<br /><span className="gradient-text">Let's bring it to life.</span></h2>
-            <p>Interested in collaborating, discussing a development opportunity, or building something meaningful? I'd love to connect.</p>
-            <p className="contact-note">Contact details and professional profiles will be added here.</p>
-            <a href="#home" className="button button-outline">Back to Top ↑</a>
+        
+<section id="contact" className="contact-section">
+  <div className="container contact-inner">
+    <span className="section-kicker">
+      05 / LET'S CONNECT
+    </span>
+
+    <h2>
+      Have an idea?
+      <br />
+      <span className="gradient-text">
+        Let's bring it to life.
+      </span>
+    </h2>
+
+    <p className="contact-intro">
+      Whether you're looking for a developer, planning a website,
+      or interested in collaborating, I'd love to hear from you.
+    </p>
+
+    <div className="contact-form-card">
+      <div className="contact-form-heading">
+        <h3>Send Me a Message</h3>
+        <p>
+          Tell me a little about your project or opportunity.
+        </p>
+      </div>
+
+      <form onSubmit={handleContactSubmit}>
+        <div className="contact-form-row">
+          <div className="contact-field">
+            <label htmlFor="contact-name">
+              Full Name *
+            </label>
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              placeholder="Your full name"
+              autoComplete="name"
+              maxLength={100}
+              required
+            />
           </div>
-        </section>
+
+          <div className="contact-field">
+            <label htmlFor="contact-email">
+              Email Address *
+            </label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              placeholder="your@email.com"
+              autoComplete="email"
+              maxLength={254}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="contact-field">
+          <label htmlFor="contact-service">
+            What can I help you with? *
+          </label>
+          <select
+            id="contact-service"
+            name="inquiry_type"
+            defaultValue=""
+            required
+          >
+            <option value="" disabled>
+              Select an option
+            </option>
+            <option value="Website Development">
+              Website Development
+            </option>
+            <option value="Website Redesign">
+              Website Redesign
+            </option>
+            <option value="IT Consulting">
+              IT Consulting
+            </option>
+            <option value="Job Opportunity">
+              Job Opportunity
+            </option>
+            <option value="Collaboration">
+              Collaboration
+            </option>
+            <option value="Other">
+              Other Inquiry
+            </option>
+          </select>
+        </div>
+
+        <div className="contact-field">
+          <label htmlFor="contact-message">
+            Your Message *
+          </label>
+          <textarea
+            id="contact-message"
+            name="message"
+            rows={6}
+            placeholder="Tell me about your project, opportunity, or idea..."
+            maxLength={5000}
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="contact-submit"
+          disabled={formStatus === "sending"}
+        >
+          {formStatus === "sending"
+            ? "Sending Message..."
+            : "Send Message ↗"}
+        </button>
+
+        {formMessage && (
+          <p
+            className={`contact-feedback ${
+              formStatus === "success"
+                ? "feedback-success"
+                : "feedback-error"
+            }`}
+            role="status"
+            aria-live="polite"
+          >
+            {formMessage}
+          </p>
+        )}
+      </form>
+    </div>
+  </div>
+</section>
+
       </main>
 
       <footer className="footer">
