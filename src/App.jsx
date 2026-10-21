@@ -256,28 +256,6 @@ function App() {
   ))}
 </div>
 
-
-                  <div className="project-details">
-                    <div className="project-meta">
-                      <span>{project.category}</span>
-                      <span>{project.number}</span>
-                    </div>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                    <div className="project-tags">
-                      {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                    </div>
-                    {project.type === "live" ? (
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-action">
-                        View Live Project <span aria-hidden="true">↗</span>
-                      </a>
-                    ) : (
-                      <span className="planned-label">Planned Project</span>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 
