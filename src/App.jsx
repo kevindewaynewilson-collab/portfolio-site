@@ -1,41 +1,44 @@
 
+
 const projects = [
   {
     number: "01",
-    title: "Business Landing Page",
-    category: "Web Design & Development",
+    title: "Tabernacle Church Website",
+    category: "Church Website Development",
     description:
-      "A modern landing page focused on clear messaging, responsive layouts, and guiding visitors toward action.",
-    tags: ["Web Development", "Responsive Design", "Vercel"],
-    url: "https://business-landing-page-six-ashen.vercel.app/",
-    theme: "business",
-    shortName: "Digital solutions",
-    type: "live",
+      "A church website project focused on modern design, user-friendly navigation, ministry resources, and media integration.",
+    image: "/images/Tabernacle.png",
+    tags: ["React", "CSS", "Responsive Design", "Media Integration"],
+    url: "https://tabernacle-southaven-website.vercel.app/",
+    status: "live",
+    buttonText: "Visit Church Website",
   },
   {
     number: "02",
-    title: "Personal Portfolio",
-    category: "Frontend Development",
+    title: "Business Landing Page",
+    category: "Frontend Web Development",
     description:
-      "An earlier portfolio project demonstrating my development journey and experience building user interfaces.",
-    tags: ["Frontend", "UI Design", "Vercel"],
-    url: "https://portfolio-site-theta-lime.vercel.app/",
-    theme: "portfolio",
-    shortName: "Creative development",
-    type: "live",
+      "A responsive business landing page designed to communicate services clearly, present a professional brand, and encourage visitors to take action.",
+    image: "/images/Business Landing Page.png",
+    tags: ["Frontend", "CSS", "Responsive Design", "Vercel"],
+    url: "https://business-landing-page-six-ashen.vercel.app/",
+    status: "live",
+    buttonText: "View Live Project",
   },
   {
     number: "03",
-    title: "IT Support Application",
-    category: "Planned Application",
+    title: "Automation Dashboard",
+    category: "Software Application Development",
     description:
-      "A planned application exploring support ticket workflows, issue tracking, and practical IT operations.",
-    tags: ["React", "JavaScript", "IT Operations"],
-    theme: "support",
-    shortName: "Support dashboard",
-    type: "planned",
+      "An in-development business management application exploring executive dashboards, AI-assisted workflows, and operational decision support.",
+    image: "/images/Automation Dashboard.png",
+    tags: ["React", "Next.js", "AI Integration", "Dashboard"],
+    url: null,
+    status: "development",
+    buttonText: "In Development",
   },
 ];
+
 
 function App() {
   return (
@@ -188,18 +191,71 @@ function App() {
               <p>Real projects and work in progress that reflect how I learn, build, and solve problems.</p>
             </div>
 
-            <div className="projects-grid">
-              {projects.map((project) => (
-                <article className="project-card-new" key={project.number}>
-                  <div className={`project-preview ${project.theme}`}>
-                    <span className="preview-number">{project.number} / PROJECT</span>
-                    <div className="preview-center">
-                      <span className="preview-mark">KW<span>.</span></span>
-                      <strong>{project.shortName}</strong>
-                      <span className="preview-line"></span>
-                    </div>
-                    <span className="preview-bottom">KEVIN WILSON DIGITAL ↗</span>
-                  </div>
+            
+<div className="projects-grid">
+  {projects.map((project) => (
+    <article className="project-card-new" key={project.number}>
+      {/* Project screenshot */}
+      <div className="project-image-container">
+        <img
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          className="project-image"
+          loading="lazy"
+        />
+
+        <span className="project-number">
+          {project.number} / PROJECT
+        </span>
+
+        <span
+          className={`project-status ${
+            project.status === "live" ? "status-live" : "status-development"
+          }`}
+        >
+          {project.status === "live"
+            ? "Featured Project"
+            : "In Development"}
+        </span>
+      </div>
+
+      {/* Project information */}
+      <div className="project-details">
+        <div className="project-meta">
+          <span>{project.category}</span>
+          <span>{project.number}</span>
+        </div>
+
+        <h3>{project.title}</h3>
+
+        <p>{project.description}</p>
+
+        <div className="project-tags">
+          {project.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+
+        {project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-action"
+          >
+            {project.buttonText}
+            <span aria-hidden="true">↗</span>
+          </a>
+        ) : (
+          <span className="planned-label">
+            {project.buttonText}
+          </span>
+        )}
+      </div>
+    </article>
+  ))}
+</div>
+
 
                   <div className="project-details">
                     <div className="project-meta">
