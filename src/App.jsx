@@ -205,28 +205,170 @@ function App() {
           </div>
         </div>
 
-        <section id="about" className="section about-section">
-          <div className="container about-grid">
-            <div>
-              <span className="section-kicker">01 / ABOUT ME</span>
-              <h2>Technology is what I do. <span className="gradient-text">Problem solving is who I am.</span></h2>
-            </div>
-            <div className="about-right">
-              <p>
-                I'm an IT professional expanding my expertise into web
-                development. I enjoy understanding how technology works,
-                solving complex problems, and building tools that people
-                can actually use.
-              </p>
-              <p>
-                From troubleshooting business technology to developing
-                modern websites, my approach is grounded in continuous
-                learning, clear communication, and purposeful execution.
-              </p>
-              <a href="#skills" className="text-link">Discover my skills ↗</a>
-            </div>
+        
+<section id="about" className="section about-section">
+  <div className="container">
+
+    <div className="about-header">
+      <span className="section-kicker">
+        01 / GET TO KNOW ME
+      </span>
+
+      <h2>
+        IT Professional.
+        <br />
+        <span className="gradient-text">
+          Web Developer.
+        </span>
+        <br />
+        Problem Solver.
+      </h2>
+
+      <p className="about-intro">
+        I'm Kevin Wilson, a technology professional passionate
+        about solving problems, building systems, and creating
+        digital experiences that make a difference.
+      </p>
+    </div>
+
+    <div className="about-career-grid">
+
+      <article className="career-card">
+        <div className="career-icon">⚙</div>
+
+        <span className="career-label">
+          PROFESSIONAL FOUNDATION
+        </span>
+
+        <h3>Information Technology</h3>
+
+        <p>
+          My background in IT has given me practical experience
+          troubleshooting technical issues, supporting users,
+          working with computer systems, and approaching
+          technology challenges with a solutions-first mindset.
+        </p>
+
+        <p>
+          I enjoy understanding how systems work, identifying
+          problems, and implementing solutions that help
+          people and organizations operate more effectively.
+        </p>
+
+        <div className="career-tags">
+          <span>IT Support</span>
+          <span>Networking</span>
+          <span>Windows Systems</span>
+          <span>Active Directory</span>
+          <span>Troubleshooting</span>
+          <span>Technical Documentation</span>
+        </div>
+      </article>
+
+      <article className="career-card">
+        <div className="career-icon">{"</>"}</div>
+
+        <span className="career-label">
+          DEVELOPMENT & INNOVATION
+        </span>
+
+        <h3>Web Development</h3>
+
+        <p>
+          My interest in web development comes from wanting
+          to go beyond supporting technology and begin
+          creating it.
+        </p>
+
+        <p>
+          I'm developing my skills through hands-on projects
+          involving responsive websites, frontend interfaces,
+          business applications, and modern development tools.
+          Every project is an opportunity to learn, improve,
+          and create something useful.
+        </p>
+
+        <div className="career-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+          <span>GitHub</span>
+          <span>Vercel</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div className="about-bottom-grid">
+      <div className="about-values">
+        <span className="section-kicker">
+          MY APPROACH
+        </span>
+
+        <h3>Built on purpose and integrity.</h3>
+
+        <p>
+          I believe great work starts with integrity,
+          continues through discipline, and succeeds
+          through a commitment to excellence.
+        </p>
+
+        <p>
+          Whether I'm troubleshooting a technical issue
+          or developing a website, my goal is to deliver
+          work that is useful, reliable, and meaningful.
+        </p>
+      </div>
+
+      <div className="about-credentials">
+        <span className="section-kicker">
+          TRAINING & CREDENTIALS
+        </span>
+
+        <h3>Continuous Learning</h3>
+
+        <div className="credential-item">
+          <span className="credential-icon">✓</span>
+          <div>
+            <strong>Google IT Support Professional Certificate</strong>
+            <p>Completed</p>
           </div>
-        </section>
+        </div>
+
+        <div className="credential-item">
+          <span className="credential-icon">✓</span>
+          <div>
+            <strong>ServiceNow Micro-Certifications</strong>
+            <p>
+              UI Builder, Platform Analytics,
+              Automated Test Framework
+            </p>
+          </div>
+        </div>
+
+        <div className="credential-item">
+          <span className="credential-icon">↗</span>
+          <div>
+            <strong>CompTIA A+</strong>
+            <p>Exam preparation / ongoing studies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="about-cta">
+      <p>
+        Want to see what I'm building?
+      </p>
+      <a href="#projects" className="button button-primary">
+        Explore My Projects ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
 
         <section id="projects" className="section projects-section">
           <div className="container">
