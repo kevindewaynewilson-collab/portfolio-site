@@ -1,290 +1,293 @@
-import "./index.css";
 
 const projects = [
   {
+    number: "01",
     title: "Business Landing Page",
+    category: "Web Design & Development",
     description:
-      "A responsive business website for a technology service company focused on websites, automation, dashboards, and business tools.",
-    tech: ["React", "Vite", "Tailwind CSS", "JavaScript"],
-    liveLink: "https://business-landing-page-six-ashen.vercel.app/",
-    githubLink: "https://github.com/kevindewaynewilson-collab/business-landing-page",
+      "A modern landing page focused on clear messaging, responsive layouts, and guiding visitors toward action.",
+    tags: ["Web Development", "Responsive Design", "Vercel"],
+    url: "https://business-landing-page-six-ashen.vercel.app/",
+    theme: "business",
+    shortName: "Digital solutions",
+    type: "live",
   },
   {
-    title: "IT Support Ticket Dashboard",
+    number: "02",
+    title: "Personal Portfolio",
+    category: "Frontend Development",
     description:
-      "A React dashboard that allows users to create, track, update, and delete IT support tickets with status sections, priority tracking, summary cards, and local browser storage.",
-    tech: ["React", "Vite", "Tailwind CSS", "localStorage"],
-    liveLink: "https://ticket-dashboard-tau.vercel.app/",
-    githubLink: "https://github.com/kevindewaynewilson-collab/ticket-dashboard",
+      "An earlier portfolio project demonstrating my development journey and experience building user interfaces.",
+    tags: ["Frontend", "UI Design", "Vercel"],
+    url: "https://portfolio-site-theta-lime.vercel.app/",
+    theme: "portfolio",
+    shortName: "Creative development",
+    type: "live",
   },
   {
-    title: "Business Automation Dashboard",
+    number: "03",
+    title: "IT Support Application",
+    category: "Planned Application",
     description:
-      "A React dashboard that helps businesses track repetitive manual tasks, estimate weekly time spent, calculate potential time savings, and manage automation status.",
-    tech: ["React", "Vite", "Tailwind CSS", "localStorage"],
-    liveLink: "https://automation-dashboard-livid.vercel.app/",
-    githubLink: "https://github.com/kevindewaynewilson-collab/automation-dashboard",
+      "A planned application exploring support ticket workflows, issue tracking, and practical IT operations.",
+    tags: ["React", "JavaScript", "IT Operations"],
+    theme: "support",
+    shortName: "Support dashboard",
+    type: "planned",
   },
-];
-
-const skills = [
-  "React",
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "Tailwind CSS",
-  "Vite",
-  "Git",
-  "GitHub",
-  "Responsive Design",
-  "Business Automation",
-  "IT Support Workflows",
-  "Technical Troubleshooting",
 ];
 
 function App() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <nav className="border-b border-slate-800">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <h1 className="text-xl font-bold">Kevin Wilson</h1>
-
-          <div className="hidden md:flex gap-6 text-sm text-slate-300">
-            <a href="#about" className="hover:text-white">
-              About
-            </a>
-            <a href="#skills" className="hover:text-white">
-              Skills
-            </a>
-            <a href="#services" className="hover:text-white">
-              Services
-            </a>
-            <a href="#projects" className="hover:text-white">
-              Projects
-            </a>
-            <a href="#contact" className="hover:text-white">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      <section className="px-6 py-20 max-w-6xl mx-auto">
-        <p className="text-blue-400 font-semibold mb-4">
-          IT Professional | Junior Full-Stack Developer | Business Automation Tools
-        </p>
-
-        <h2 className="text-4xl md:text-6xl font-bold leading-tight max-w-5xl">
-          I build websites, dashboards, and workflow tools that help businesses
-          save time and operate better.
-        </h2>
-
-        <p className="text-slate-300 mt-6 max-w-3xl text-lg leading-8">
-          I combine my IT support background with web development skills to
-          build practical business tools, responsive websites, ticket dashboards,
-          and automation-focused applications.
-        </p>
-
-        <div className="flex flex-wrap gap-4 mt-8">
-          <a
-            href="#projects"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
-          >
-            View Projects
+    <div className="site">
+      <header className="navbar">
+        <div className="container nav-inner">
+          <a className="brand" href="#home">
+            <span className="brand-icon">KW.</span>
+            <span>Kevin Wilson<span className="brand-accent"> Digital</span></span>
           </a>
 
-          <a
-            href="#contact"
-            className="border border-slate-600 hover:border-blue-500 px-6 py-3 rounded-lg font-semibold"
-          >
-            Contact Me
+          <nav className="nav-menu" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+          </nav>
+
+          <a className="nav-contact" href="#contact">
+            Let's Talk <span aria-hidden="true">↗</span>
           </a>
         </div>
-      </section>
+      </header>
 
-      <section id="about" className="px-6 py-16 bg-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold mb-4">About Me</h3>
-
-          <p className="text-slate-300 max-w-4xl leading-8">
-            I am an IT professional transitioning deeper into web development,
-            full-stack development, and business automation. My background in
-            technical support, troubleshooting, documentation, and IT workflows
-            helps me understand real business problems and build practical
-            technology solutions.
-          </p>
-
-          <p className="text-slate-300 max-w-4xl leading-8 mt-4">
-            My current focus is building websites, dashboards, workflow tools,
-            and automation-focused applications that help organizations organize
-            information, reduce repetitive work, and improve daily operations.
-          </p>
-        </div>
-      </section>
-
-      <section id="skills" className="px-6 py-16 max-w-6xl mx-auto">
-        <h3 className="text-3xl font-bold mb-8">Skills & Tools</h3>
-
-        <div className="flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="bg-slate-900 border border-slate-800 text-slate-300 px-4 py-2 rounded-full text-sm"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <section id="services" className="px-6 py-16 bg-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold mb-8">What I Build</h3>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="bg-slate-950 p-6 rounded-xl border border-slate-800">
-              <h4 className="font-bold text-xl mb-3">Websites</h4>
-              <p className="text-slate-400 leading-7">
-                Responsive websites and landing pages for businesses, brands,
-                and service providers.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 p-6 rounded-xl border border-slate-800">
-              <h4 className="font-bold text-xl mb-3">Dashboards</h4>
-              <p className="text-slate-400 leading-7">
-                Simple dashboards for tracking tickets, tasks, processes,
-                business information, and workflows.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 p-6 rounded-xl border border-slate-800">
-              <h4 className="font-bold text-xl mb-3">Automation Tools</h4>
-              <p className="text-slate-400 leading-7">
-                Tools that help businesses identify repetitive work and create
-                better systems.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 p-6 rounded-xl border border-slate-800">
-              <h4 className="font-bold text-xl mb-3">IT Workflow Tools</h4>
-              <p className="text-slate-400 leading-7">
-                Applications that connect IT support experience with practical
-                software solutions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="px-6 py-16 max-w-6xl mx-auto">
-        <h3 className="text-3xl font-bold mb-4">Featured Projects</h3>
-
-        <p className="text-slate-400 max-w-3xl mb-8 leading-7">
-          These projects were built to show my ability to create business-focused
-          web applications, responsive layouts, dashboard interfaces, and
-          automation tools.
-        </p>
-
-        <div className="grid lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="bg-slate-900 p-6 rounded-xl border border-slate-800 flex flex-col"
-            >
-              <h4 className="text-xl font-bold mb-3">{project.title}</h4>
-
-              <p className="text-slate-400 leading-7 mb-5">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((techItem) => (
-                  <span
-                    key={techItem}
-                    className="bg-slate-950 border border-slate-800 text-slate-300 px-3 py-1 rounded-full text-xs"
-                  >
-                    {techItem}
-                  </span>
-                ))}
+      <main>
+        <section className="hero" id="home">
+          <div className="hero-glow"></div>
+          <div className="container hero-grid">
+            <div className="hero-copy">
+              <div className="intro-pill">
+                <span className="status-dot"></span>
+                IT PROFESSIONAL / WEB DEVELOPER
               </div>
 
-              <div className="flex gap-3 mt-auto">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold"
-                >
-                  Live Demo
-                </a>
+              <p className="hero-greeting">Hello, I'm Kevin Wilson.</p>
 
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="border border-slate-600 hover:border-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold"
-                >
-                  GitHub
+              <h1>
+                Building digital
+                <span className="gradient-text"> experiences </span>
+                that matter.
+              </h1>
+
+              <p className="hero-description">
+                I combine hands-on IT experience with modern web development
+                to turn ideas into practical, engaging digital solutions
+                for businesses, brands, and organizations.
+              </p>
+
+              <div className="hero-actions">
+                <a href="#projects" className="button button-primary">
+                  Explore My Work <span aria-hidden="true">↗</span>
+                </a>
+                <a href="#about" className="button button-outline">
+                  More About Me <span aria-hidden="true">→</span>
                 </a>
               </div>
+
+              <div className="hero-keywords">
+                <span>WEB DEVELOPMENT</span>
+                <span>IT SOLUTIONS</span>
+                <span>PROBLEM SOLVING</span>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      <section id="contact" className="px-6 py-16 bg-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold mb-4">Contact</h3>
+            <div className="hero-visual">
+              <div className="orbit orbit-one"></div>
+              <div className="orbit orbit-two"></div>
 
-          <p className="text-slate-300 max-w-3xl mb-6 leading-7">
-            I am open to opportunities involving web development, IT support,
-            business automation, application support, and practical technology
-            solutions.
-          </p>
+              <div className="code-window">
+                <div className="window-header">
+                  <div className="window-dots">
+                    <i></i><i></i><i></i>
+                  </div>
+                  <span>developer.jsx</span>
+                  <span className="window-symbol">⌘</span>
+                </div>
 
-          <div className="bg-slate-950 p-6 rounded-xl border border-slate-800 max-w-2xl">
-            <p className="text-slate-300">
-              Email:{" "}
-              <a
-                href="mailto:kevindewaynewilson@gmail.com"
-                className="text-blue-400 hover:text-blue-300"
-              >
-                kevindewaynewilson@gmail.com
-              </a>
-            </p>
+                <div className="code-body">
+                  <p className="code-comment">// Developer profile</p>
+                  <p><span className="syntax-purple">const</span> developer = {"{"}</p>
+                  <p className="indent">name: <span className="syntax-green">"Kevin Wilson"</span>,</p>
+                  <p className="indent">focus: <span className="syntax-green">"Web Development"</span>,</p>
+                  <p className="indent">background: <span className="syntax-green">"Information Technology"</span>,</p>
+                  <p className="indent">approach: <span className="syntax-green">"Problem Solving"</span>,</p>
+                  <p className="indent">mission: <span className="syntax-green">"Build With Purpose"</span></p>
+                  <p>{"}"};</p>
+                  <p className="code-spacer"></p>
+                  <p><span className="syntax-purple">function</span> <span className="syntax-blue">buildFuture</span>() {"{"}</p>
+                  <p className="indent"><span className="syntax-purple">return</span> <span className="syntax-green">"Make it happen."</span>;</p>
+                  <p>{"}"}</p>
+                </div>
+                <div className="window-footer">
+                  <span><span className="status-dot"></span> System ready</span>
+                  <span>React / JavaScript</span>
+                </div>
+              </div>
 
-            <p className="text-slate-300 mt-3">
-              LinkedIn:{" "}
-              <a
-                href="https://www.linkedin.com/in/kevinwilsontech"
-                target="_blank"
-                rel="noreferrer"
-                className="text-blue-400 hover:text-blue-300"
-              >
-                https://www.linkedin.com/in/kevinwilsontech
-              </a>
-            </p>
+              <div className="floating-label">
+                <span className="floating-symbol">✦</span>
+                Design. Develop. Deliver.
+              </div>
+            </div>
+          </div>
 
-            <p className="text-slate-300 mt-3">
-              GitHub:{" "}
-              <a
-                href="https://github.com/kevindewaynewilson-collab"
-                target="_blank"
-                rel="noreferrer"
-                className="text-blue-400 hover:text-blue-300"
-              >
-                https://github.com/kevindewaynewilson-collab
-              </a>
-            </p>
+          <a href="#about" className="scroll-hint">SCROLL TO EXPLORE ↓</a>
+        </section>
+
+        <div className="expertise-strip">
+          <div className="container expertise-inner">
+            <span>TECHNOLOGY</span>
+            <span className="strip-star">✳</span>
+            <span>DEVELOPMENT</span>
+            <span className="strip-star">✳</span>
+            <span>INNOVATION</span>
+            <span className="strip-star">✳</span>
+            <span>IT SOLUTIONS</span>
           </div>
         </div>
-      </section>
 
-      <footer className="px-6 py-6 text-center text-slate-500 text-sm">
-        © 2026 Kevin Wilson. Built with React and Tailwind CSS.
+        <section id="about" className="section about-section">
+          <div className="container about-grid">
+            <div>
+              <span className="section-kicker">01 / ABOUT ME</span>
+              <h2>Technology is what I do. <span className="gradient-text">Problem solving is who I am.</span></h2>
+            </div>
+            <div className="about-right">
+              <p>
+                I'm an IT professional expanding my expertise into web
+                development. I enjoy understanding how technology works,
+                solving complex problems, and building tools that people
+                can actually use.
+              </p>
+              <p>
+                From troubleshooting business technology to developing
+                modern websites, my approach is grounded in continuous
+                learning, clear communication, and purposeful execution.
+              </p>
+              <a href="#skills" className="text-link">Discover my skills ↗</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" className="section projects-section">
+          <div className="container">
+            <div className="section-top">
+              <div>
+                <span className="section-kicker">02 / SELECTED WORK</span>
+                <h2>Featured <span className="gradient-text">Projects.</span></h2>
+              </div>
+              <p>Real projects and work in progress that reflect how I learn, build, and solve problems.</p>
+            </div>
+
+            <div className="projects-grid">
+              {projects.map((project) => (
+                <article className="project-card-new" key={project.number}>
+                  <div className={`project-preview ${project.theme}`}>
+                    <span className="preview-number">{project.number} / PROJECT</span>
+                    <div className="preview-center">
+                      <span className="preview-mark">KW<span>.</span></span>
+                      <strong>{project.shortName}</strong>
+                      <span className="preview-line"></span>
+                    </div>
+                    <span className="preview-bottom">KEVIN WILSON DIGITAL ↗</span>
+                  </div>
+
+                  <div className="project-details">
+                    <div className="project-meta">
+                      <span>{project.category}</span>
+                      <span>{project.number}</span>
+                    </div>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <div className="project-tags">
+                      {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
+                    {project.type === "live" ? (
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-action">
+                        View Live Project <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : (
+                      <span className="planned-label">Planned Project</span>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="section skills-section">
+          <div className="container">
+            <span className="section-kicker">03 / WHAT I BRING</span>
+            <h2>A foundation in IT.<br /><span className="gradient-text">A future in development.</span></h2>
+
+            <div className="skills-grid">
+              <div className="skill-panel">
+                <div className="skill-icon">{"</>"}</div>
+                <h3>Web Development</h3>
+                <p>Building responsive interfaces and improving my ability to create useful digital experiences.</p>
+                <div className="skills-list">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+                </div>
+              </div>
+
+              <div className="skill-panel">
+                <div className="skill-icon">⌘</div>
+                <h3>Development Tools</h3>
+                <p>Using modern development workflows to build, manage, test, and deploy projects.</p>
+                <div className="skills-list">
+                  <span>VS Code</span><span>GitHub</span><span>Vercel</span><span>Vite</span>
+                </div>
+              </div>
+
+              <div className="skill-panel">
+                <div className="skill-icon">⚙</div>
+                <h3>IT & Systems</h3>
+                <p>Applying practical IT knowledge to troubleshooting, technical operations, and end-user support.</p>
+                <div className="skills-list">
+                  <span>Windows</span><span>Networking</span><span>Active Directory</span><span>Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section philosophy-section">
+          <div className="container">
+            <span className="section-kicker">04 / MY APPROACH</span>
+            <h2>"Great technology doesn't just work. <span className="gradient-text">It makes a difference.</span>"</h2>
+            <p>Built with integrity. Driven by curiosity. Focused on real results.</p>
+          </div>
+        </section>
+
+        <section id="contact" className="contact-section">
+          <div className="container contact-inner">
+            <span className="section-kicker">05 / LET'S CONNECT</span>
+            <h2>Have an idea?<br /><span className="gradient-text">Let's bring it to life.</span></h2>
+            <p>Interested in collaborating, discussing a development opportunity, or building something meaningful? I'd love to connect.</p>
+            <p className="contact-note">Contact details and professional profiles will be added here.</p>
+            <a href="#home" className="button button-outline">Back to Top ↑</a>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container footer-inner">
+          <a className="footer-brand" href="#home">KW<span>.</span></a>
+          <span>© 2026 Kevin Wilson Digital. Built with purpose.</span>
+          <a href="#home">Back to Top ↑</a>
+        </div>
       </footer>
-    </main>
+    </div>
   );
 }
 
